@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Root & Ripple</title>
+    <!-- 
+        ========== STYLESHEETS ==========
+        - Main CSS file
+        - Google Fonts (Rajdhani)
+        - Font Awesome icons (two versions included)
+    -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <!-- 
+        ========== INLINE STYLES ==========
+        - Temporary styles for 3D model container
+        - Consider moving to main CSS file later
+    -->
+    <style>
+        #product-model {
+            width: 100%;
+            height: 500px;
+            background: #f0f0f0;
+            margin: 20px 0;
+        }
+        canvas { display: block; }
+    </style>
 </head>
 <body>
+
+
+    <!-- 
+        ========== HEADER ==========
+        - Fixed position for constant access
+        - Logo
+        - Navigation links with hover effects
+        - Login button (CTA)
+    -->
     <header>
         <nav>
             <a href="#" class="logo">Root <span>&</span> Ripple</a>
-            <!-- <a class="logo-image" href="#">
-                <img src="logox.png" alt="logo" width="200" height="150"> -->
             <ul class="links">
                 <li class="active"><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -27,18 +51,32 @@
             <button type="button"><a href="#login">Log in</a></button>
         </nav>
     </header>
+    
 
+    <!-- 
+        ========== HOME SECTION ==========
+        - Full-viewport height
+        - Background image (ensure 'background-image.jpg' exists)
+        - Primary CTA button
+    -->
     <div id="home" class="hero">
         <div class="container">
             <div class="div-text">
                 <h1>WE INTEGRATE</h1>
                 <span>TECHNOLOGY & ENERGY</span>
-                <p>At Root & Ripple, we harness green energy through innovative recycling, transforming waste into sustainable solutions for a cleaner planet.</p>
+                <p>At Root & Ripple, we harness green energy through innovative recycling...</p>
                 <button type="button"><a href="#about">GET STARTED</a></button>
             </div>
         </div>
     </div>
 
+
+    <!-- 
+        ========== ABOUT SECTION ==========
+        - Company mission/vision
+        - Timeline component
+        - Core values cards
+    -->
     <section id="about" class="about-hero">
         <div class="hero-overlay">
             <h1>About Root & Ripple</h1>
@@ -47,112 +85,81 @@
                 technology into everyday household and commercial products. Our mission is to provide sustainable energy solutions that empower individuals and businesses to reduce electricity consumption, 
                 lower costs, and contribute to a greener planet. <br>
                 We envision a future where energy efficiency is seamlessly integrated into daily life. By harnessing cutting-edge renewable energy sources, we aim 
-                to redefine how people interact with energy-efficient solutions in their homes, offices, and commercial spaces.   </p>
-            <button id="learnMoreBtn">Learn More</button>
+                to redefine how people interact with energy-efficient solutions in their homes, offices, and commercial spaces.</p>
+            <button type="button" class="learnMoreBtn"><a href="#our-journey">Learn More</a></button>
         </div>
         <div class="hero-glow"></div>
     </section>
-        <!-- Who We Are Section -->
-        <!-- <section id="who-we-are" class="who-we-are">
-            <div class="content">
-                <div class="image">
-                    <img src="futuristic city.jpg" alt="Futuristic City">
-                </div>
-                <div class="text">
-                    <h2>Innovating the Way We Power the World</h2>
-                    <p>Root & Ripple is a forward-thinking technology company dedicated to revolutionizing energy generation and distribution through cutting-edge innovations. We are committed to reshaping the energy landscape, ensuring sustainable, efficient, and intelligent power solutions that drive progress while minimizing environmental impact.</p>
-                    <div class="key-points">
-                        <div class="point">
-                            <i class="fas fa-bolt"></i>
-                            <span>Disruptive Technology</span>
-                        </div>
-                        <div class="point">
-                            <i class="fas fa-leaf"></i>
-                            <span>Sustainability</span>
-                        </div>
-                        <div class="point">
-                            <i class="fas fa-microchip"></i>
-                            <span>Future-Ready</span>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </section>
-    
-        <!-- Our Journey Section -->
-        <section id="our-journey" class="our-journey">
-            <h2>Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-event">
-                    <div class="event-marker"></div>
-                    <div class="event-content">
-                        <h3>The Begining - A Student vision</h3>
-                        <p>We wanted to really make a change and invent sustainable solutions.</p>
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="event-marker"></div>
-                    <div class="event-content">
-                        <h3>One Goal - Team was formed</h3>
-                        <p>A team dedicated to reach one goal which is to make full use of energy.</p>
-                    </div>
-                </div>
-                <div class="timeline-event">
-                    <div class="event-marker"></div>
-                    <div class="event-content">
-                        <h3>First miracle - ReGenX was launched</h3>
-                        <p>Our new energy systems set new industry standards and proved that we are the future.</p>
-                    </div>
+
+    <section id="our-journey" class="our-journey">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-event">
+                <div class="event-marker"></div>
+                <div class="event-content">
+                    <h3>The Begining - A Student vision</h3>
+                    <p>We wanted to really make a change and invent sustainable solutions.</p>
                 </div>
             </div>
-        </section>
-    
-        <!-- Core Values Section -->
-        <section id="core-values" class="core-values">
-            <h2>What Drives Us</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Innovation</h3>
-                    <p>Pushing boundaries in energy solutions.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Sustainability</h3>
-                    <p>A greener planet with smarter energy.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Future-Ready</h3>
-                    <p>Merging AI with energy transformation.</p>
+            <div class="timeline-event">
+                <div class="event-marker"></div>
+                <div class="event-content">
+                    <h3>One Goal - Team was formed</h3>
+                    <p>A team dedicated to reach one goal which is to make full use of energy.</p>
                 </div>
             </div>
-        </section>
-    
-    </div>
+            <div class="timeline-event">
+                <div class="event-marker"></div>
+                <div class="event-content">
+                    <h3>First miracle - ReGenX was launched</h3>
+                    <p>Our new energy systems set new industry standards and proved that we are the future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="core-values" class="core-values">
+        <h2>What Drives Us</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Innovation</h3>
+                <p>Pushing boundaries in energy solutions.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainability</h3>
+                <p>A greener planet with smarter energy.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Future-Ready</h3>
+                <p>Merging AI with energy transformation.</p>
+            </div>
+        </div>
+    </section>
 
 
-
+    <!-- 
+        ========== PRODUCT SECTION ==========
+        - 3D model viewer container
+        - Feature cards with tech specs
+        - Pricing tiers
+    -->
     <div class="producty" id="product">
         <section class="herox-section">
             <div class="herox-content">
                 <h1 class="neon-text">ENERGY-GENERATING SMART CURTAINS</h1>
                 <p class="subtitle">Harness the power of sunlight and motion to reduce your energy bills</p>
-                <button class="cyberpunk-btn">EXPLORE TECH SPECS</button>
+                <button class="cyberpunk-btn" type="button"><a href="#tech-specs">EXPLORE TECH SPECS</a></button>
             </div>
             <div class="product-visualization">
                 <!-- 3D Model Container -->
                 <div id="product-model"></div>
-                <div class="visualization-controls">
-                    <button class="model-control" data-action="rotate">ROTATE</button>
-                    <button class="model-control" data-action="zoom">ZOOM</button>
-                    <button class="model-control" data-action="material">MATERIAL</button>
-                </div>
             </div>
         </section>
-    
-        <!-- Energy Features Grid -->
-        <section class="featuresx-section">
+
+        <section  id="tech-specs" class="featuresx-section">
             <h2 class="sectionx-title">TRIPLE POWER GENERATION SYSTEM</h2>
             <div class="featuresx-grid">
                 <div class="featurex-card">
@@ -184,8 +191,7 @@
                 </div>
             </div>
         </section>
-    
-        <!-- Product Demonstration -->
+
         <section class="demo-section">
             <div class="demo-content">
                 <h2>SMART HOME INTEGRATION</h2>
@@ -198,7 +204,6 @@
             </div>
             <div class="demo-visual">
                 <div class="app-interface">
-                    <!-- Placeholder for app screenshot -->
                     <div class="phone-mockup">
                         <div class="screen-content">
                             <div class="energy-graph"></div>
@@ -212,10 +217,7 @@
                 </div>
             </div>
         </section>
-    
-    
-    
-        <!-- Tech Specs Section -->
+
         <section class="specs-section">
             <h2 class="sectionx-title">TECHNICAL SPECIFICATIONS</h2>
             <div class="specs-grid">
@@ -280,8 +282,7 @@
                 </div>
             </div>
         </section>
-    
-        <!-- Pricing Section -->
+
         <section class="pricing-section">
             <h2 class="sectionx-title">MODULAR PRICING OPTIONS</h2>
             <div class="pricing-tiers">
@@ -318,24 +319,21 @@
                 </div>
             </div>
         </section>
-    
-    
-    
-        <!-- Floating UI Elements -->
+
         <div class="floating-particle" style="top:20%; left:10%;"></div>
         <div class="floating-particle" style="top:70%; left:80%;"></div>
         <div class="floating-particle" style="top:40%; left:50%;"></div>
-    
-
     </div>
 
-     <!-- Hero Section -->
-     
 
-
-
-    <div class="reviewy">
-        <section class="hero-section" id="reviews">
+    <!-- 
+        ========== REVIEWS SECTION ==========
+        - Dynamic review cards
+        - Filtering system
+        - Review submission form
+    -->
+    <div class="reviewy" id="reviews">
+        <section class="hero-section">
             <div class="containery">
                 <div class="hero-content">
                     <h1>What Our Customers Say About Smart Curtain</h1>
@@ -357,8 +355,7 @@
                 </div>
             </div>
         </section>
-    
-        <!-- Reviews Section -->
+
         <section class="reviews-section">
             <div class="containery">
                 <div class="section-title">
@@ -390,8 +387,7 @@
                 </div>
             </div>
         </section>
-    
-        <!-- Customer Photos Section -->
+
         <section class="gallery-section">
             <div class="containery">
                 <div class="section-title">
@@ -405,7 +401,6 @@
                             <i class="fas fa-expand"></i>
                         </div>
                     </div>
-                    <!-- More gallery items will be added by JavaScript -->
                 </div>
                 
                 <div class="text-center">
@@ -413,8 +408,7 @@
                 </div>
             </div>
         </section>
-    
-        <!-- Write Review Section -->
+
         <section class="write-review" id="write-review">
             <div class="containery">
                 <div class="section-title">
@@ -466,32 +460,7 @@
                 </form>
             </div>
         </section>
-    
-        <!-- Customer Support Section -->
-        <!-- <section class="support-section">
-            <div class="container">
-                <div class="support-content">
-                    <h3>Need Help? We're Here for You!</h3>
-                    <div class="support-options">
-                        <div class="support-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>support@smartcurtain.com</span>
-                        </div>
-                        <div class="support-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+123-456-7890</span>
-                        </div>
-                        <div class="support-item">
-                            <i class="fas fa-comment-dots"></i>
-                            <span>Live Chat (24/7)</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-secondary">View FAQs</a>
-                </div>
-            </div>
-        </section> -->
-    
-        <!-- Why Choose Section -->
+
         <section class="why-choose">
             <div class="containery">
                 <div class="section-title">
@@ -529,8 +498,12 @@
     </div>
 
 
-     
-
+       <!-- 
+        ========== CONTACT SECTION ==========
+        - Contact form
+        - Map integration
+        - Social media links
+    -->
     <div id="contact" class="contact-hero">
         <div class="containerx">
             <h1>Contact</h1>
@@ -585,6 +558,12 @@
         </div>
     </section>
 
+
+        <!-- 
+        ========== LOGIN/REGISTER MODAL ==========
+        - Toggle between forms
+        - Form validation
+    -->
     <div id="login" class="login-page">
         <div class="login-container">
             <div class="heading-line"></div>
@@ -631,6 +610,13 @@
         </div>
     </div>
 
+
+        <!-- 
+        ========== FOOTER ==========
+        - Quick links
+        - Contact info
+        - Copyright
+    -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
@@ -647,7 +633,7 @@
                 <h3>Contact Info</h3>
                 <ul>
                     <li><i class="fas fa-envelope"></i> Email: Alexsch@stemalex.moe.edu.eg</li>
-                    <li><i class="fas fa-phone"></i> Phone: +20 10 65682294</li>
+                    <li><i class="fas fa-phone"></i> Phone: +201097627152</li>
                     <li><i class="fas fa-map-marker-alt"></i> Address: Alexandia STEM School, New Borg El-arab City, Alexandria Governorate</li>
                 </ul>
             </div>
@@ -665,43 +651,130 @@
         </div>
     </footer>
 
-  <!-- Chatbase AI Widget -->
-<script>
-  (function(){
-    if(!window.chatbase||window.chatbase("getState")!=="initialized"){
-      window.chatbase=(...arguments)=>{
-        if(!window.chatbase.q){window.chatbase.q=[]}
-        window.chatbase.q.push(arguments)
-      };
-      window.chatbase=new Proxy(window.chatbase,{
-        get(target,prop){
-          if(prop==="q"){return target.q}
-          return(...args)=>target(prop,...args)
+    <!-- Chatbase AI Widget -->
+    <script>
+      (function(){
+        if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+          window.chatbase=(...arguments)=>{
+            if(!window.chatbase.q){window.chatbase.q=[]}
+            window.chatbase.q.push(arguments)
+          };
+          window.chatbase=new Proxy(window.chatbase,{
+            get(target,prop){
+              if(prop==="q"){return target.q}
+              return(...args)=>target(prop,...args)
+            }
+          })
         }
-      })
-    }
-    const onLoad=function(){
-      const script=document.createElement("script");
-      script.src="https://www.chatbase.co/embed.min.js";
-      script.id="a8x2aNtBaMl_4_tRFcmlX"; // secret key which i put in gitignore
-      script.domain="www.chatbase.co";
-      document.body.appendChild(script)
-    };
-    if(document.readyState==="complete"){onLoad()}
-    else{window.addEventListener("load",onLoad)}
-  })();
-</script>
+        const onLoad=function(){
+          const script=document.createElement("script");
+          script.src="https://www.chatbase.co/embed.min.js";
+          script.id="a8x2aNtBaMl_4_tRFcmlX";
+          script.domain="www.chatbase.co";
+          document.body.appendChild(script)
+        };
+        if(document.readyState==="complete"){onLoad()}
+        else{window.addEventListener("load",onLoad)}
+      })();
+    </script>
 
-<script>
-  window.chatbase('config', {
-    chatboxTitle: 'RootNRipple Assistant',
-    themeColor: '#FF1010', //red color
-    welcomeMessage: 'Welcome to RootNRipple! Ask me anything.',
-    fontSize: '16px',
-    bubbleBackground: '#000000', // Black bubble
-    bubbleTextColor: '#FFFFFF' // White text
-  });
-</script>
+    <script>
+      window.chatbase('config', {
+        chatboxTitle: 'RootNRipple Assistant',
+        themeColor: '#FF1010',
+        welcomeMessage: 'Welcome to RootNRipple! Ask me anything.',
+        fontSize: '16px',
+        bubbleBackground: '#000000',
+        bubbleTextColor: '#FFFFFF'
+      });
+    </script>
+
+    <!-- Three.js scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.min.js"></script>
+    
+    <!-- 3D Model Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Three.js scene
+            const container = document.getElementById('product-model');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(
+                75, 
+                container.offsetWidth / container.offsetHeight, 
+                0.1, 
+                1000
+            );
+            
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+
+            // Load 3D model
+            const loader = new THREE.GLTFLoader();
+            loader.load(
+                'model.glb',
+                function(gltf) {
+                    scene.add(gltf.scene);
+                    
+                    // Center and scale model
+                    const box = new THREE.Box3().setFromObject(gltf.scene);
+                    const center = box.getCenter(new THREE.Vector3());
+                    const size = box.getSize(new THREE.Vector3());
+                    
+                    gltf.scene.position.x += (gltf.scene.position.x - center.x);
+                    gltf.scene.position.y += (gltf.scene.position.y - center.y);
+                    gltf.scene.position.z += (gltf.scene.position.z - center.z);
+                    
+                    camera.position.z = size.length() * 1.5;
+                },
+                undefined,
+                function(error) {
+                    console.error('Error loading model:', error);
+                }
+            );
+
+            // Add orbit controls
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                camera.aspect = container.offsetWidth / container.offsetHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.offsetWidth, container.offsetHeight);
+            });
+
+            // Add interaction to control buttons
+            document.querySelectorAll('.model-control').forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    // Add functionality for rotate/zoom/material buttons
+                    console.log(action + ' button clicked');
+                });
+            });
+        });
+    </script>
+
+    <!-- Main script.js -->
     <script src="script.js"></script>
 </body>
 </html>
